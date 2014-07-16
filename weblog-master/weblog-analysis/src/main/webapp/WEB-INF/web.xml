@@ -1,0 +1,20 @@
+
+<web-app>
+
+	<welcome-file-list>
+		<welcome-file>/index.html</welcome-file>
+	</welcome-file-list>
+
+	<servlet>
+		<servlet-name>jdbc</servlet-name>
+		<servlet-class>com.akrantha.weblog.JDBCServlet</servlet-class>
+	</servlet>
+
+	<!-- Servlet Mapping -->
+	<servlet-mapping>
+		<servlet-name>jdbc</servlet-name>
+		<url-pattern>/jdbc</url-pattern>
+	</servlet-mapping>
+
+</web-app>
+

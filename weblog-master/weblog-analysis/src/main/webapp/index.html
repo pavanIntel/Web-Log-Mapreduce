@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Weblog-analysis">
+
+<title>Weblog-analysis</title>
+
+<script src="js/jquery.js"></script>    
+
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="bootstrap-responsive.css" rel="stylesheet">
+<script src="js/bootstrap.js"></script>
+
+<link href="datepicker.css" rel="stylesheet">
+<link href="bs.css" rel="stylesheet">
+<link href="css.css" rel="stylesheet">
+<script src="js/bootstrap-datepicker.js"></script>
+
+<link rel="css.css" type="text/css" href="css.css">
+<link rel="style.css" type="text/css" href="style.css">
+    
+<style>
+        body
+{
+background-color:#F5F5F5;
+}
+
+
+
+	.top-bar{
+		margin: 5px 0px;
+	}
+	
+	.logo{
+		text-align:left;
+		margin: 15px 0px;
+		margin-bottom: 25px;
+	}
+	
+	.dataframe{
+		background: none;
+		width: 100%;
+		border: 0px solid;
+		border: none;
+		min-height: 60px;
+	}
+	
+	.left-menu{
+		cursor: pointer;
+	}
+	
+	.dev-message{
+		display: none;
+		font-size: 16px;
+	}
+	
+	#bt_next, #bt_prev{
+		margin-bottom: 10px;
+	}
+	
+	.shirish{
+		line-height: 15px;
+	}
+	
+	.datepick{
+		width: 92%;
+	}
+
+          .hero-unit {
+    border-radius: 6px 6px 6px 6px;
+    color: inherit;
+    font-size: 18px;
+    font-weight: 200;
+    margin-bottom: 30px;
+    width:1100px;
+   margin-left: -0.7cm;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+<!-- Modal -->
+
+ 
+
+    <div class="row-fluid">
+		<div class="span1"></div>
+		<div class="span10">
+			<div class="span12">
+				<div class="logo"><img src="img/logo1.png"></div>
+				<div class="top-bar">
+						<div id="navbar-example" class="navbar navbar-static">
+						  <div class="navbar-inner">
+							<div class="container" style="width: auto;">
+							  <a class="brand left-menu" onclick="loadframe(0);"><i class="icon-home"></i></a>
+							  <ul class="nav" role="navigation">
+							  
+								<li class="dropdown">
+								  <a id="drop1" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-folder-open"></i> Visualizations <b class="caret"></b></a>
+								  <ul class="dropdown-menu" role="menu" aria-labelledby="drop1">
+									
+									<li id="leftmenuli0" class="leftmenuli"><a href="summary.html" target="datframe">Summary</a></li>
+									
+									<li class="dropdown-submenu">
+										<a tabindex="-1" class="left-menu">Histograms</a>
+										<ul class="dropdown-menu">
+											<li id="leftmenuli1" class="leftmenuli active"><a href="system_excepions.html" target="datframe">System Exceptions</a></li>
+											<li id="leftmenuli2" class="leftmenuli"><a href="exceptions.html" target="datframe">Total exceptions</a></li>
+                                                                                        <li id="leftmenuli2" class="leftmenuli"><a href="nooftransctions.html" target="datframe">No.of Transactions</a></li>
+                                                                                        <li id="leftmenuli2" class="leftmenuli"><a href="methodperformence.html" target="datframe">Method performance measure(Peak)</a></li>
+										
+										</ul>
+									</li>
+									
+									<li class="dropdown-submenu">
+										<a tabindex="-1" class="left-menu">Heatmap</a>
+										<ul class="dropdown-menu">
+											<li id="leftmenuli2" class="leftmenuli"><a href="heatmap.html" target="datframe">No.of Transactions</a></li>
+											
+											
+										</ul>
+									</li>
+									
+									
+									
+									<li class="dropdown-submenu">
+										<a tabindex="-1" class="left-menu">Activity</a>
+										<ul class="dropdown-menu">
+											<li id="leftmenuli9" class="leftmenuli"><a href="transctionspie.html" target="datframe">Top Activity</a></li>
+											
+											
+											
+										</ul>
+									</li>
+									
+									<li class="dropdown-submenu">
+										<a tabindex="-1" class="left-menu">Bubble Charts</a>
+										<ul class="dropdown-menu">
+											<li id="leftmenuli14" class="leftmenuli"><a href="number_of_methods.html" target="datframe">Peak Activity</a></li>
+											<li id="leftmenuli15" class="leftmenuli"><a href="top_transaction_times.html"target="datframe">Outliers - Method Responses</a></li>
+											
+										</ul>
+									</li>
+									
+									<li class="dropdown-submenu">
+										<a tabindex="-1" class="left-menu">EJB's</a>
+										<ul class="dropdown-menu">
+											<li id="leftmenuli19" class="leftmenuli"><a href="ejbcalls.html" target="datframe">Frequently used EJB's</a></li>
+                                                                                       <!-- <li id="leftmenuli19" class="leftmenuli"><a href="ejb_name_calls.html" target="datframe">Ejb's Bubble chart</a></li>-->
+											
+										</ul>
+									</li>
+								  
+								  </ul>
+								</li>
+								
+								
+								
+							  </ul>
+							</div>
+						  </div>
+						</div> <!-- /navbar-example -->
+				</div>
+				
+					<div class="span9">
+					
+						<div class="hero-unit" style="background: #f9f9f9; border: 1px solid #ccc; line-height: 24px; padding: 30px;">
+											
+							
+							
+							<div style="display: block;" class="dev-message">
+								<div class="alert alert-info"><i class="icon-info-sign"></i> 
+This application is under active development. More charts and more 
+options will be added in the future.</div>
+							</div>
+							
+							<div style="display: block;" id="data-iframe"><iframe style="height: 490px;" id="dataframe" class="dataframe" name="datframe" src="system_excepions.html" frameborder="0"></iframe></div>
+						</div>
+					
+						<div class="span12">
+								<p style="text-align: center;">
+									<small>© Copyright Adaequare ~ </small>
+									<small>Maintained by Adaequare</small><br>
+									<small>Application created by <u>Adaequare</u>.</small>
+								</p>
+						</div>
+					
+					</div>
+					
+				</div>
+			</div>
+		
+		</div>
+		<div class="span1"></div>
+    </div>
+	
+	</div></div>
+
+</body></html>

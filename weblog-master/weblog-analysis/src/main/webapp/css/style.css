@@ -1,0 +1,10 @@
+    body{
+        background: #eee url('../images/bedge_grunge.png');
+        font-family: "Rokkitt", "Segoe UI", "Arial";
+        font-size: 18px;
+		margin: 0px;
+    }
+	
+    input, select, button, a{
+        outline: none !important;   
+    }

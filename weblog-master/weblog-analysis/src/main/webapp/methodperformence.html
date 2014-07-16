@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- Generated with d3-generator.com -->
+<html>
+  <head>
+     <title>Bar Chart</title>
+     <meta http-equiv="X-UA-Compatible" content="IE=9">
+
+<style>
+body{font-size:9.3px;}
+h2 {color:rgb(57, 185, 214);
+margin-top:0.5cm;
+text-transform: uppercase;
+ font: 13px sans-serif;
+}
+</style>
+  </head>
+  <body style="border: 2px solid grey;width:1080px;height:470px;">
+<h2 align="center"><b> Method performance mesaure(Peak)</b></h2>
+    <div id="chart"></div>
+    <script src="js/d3.v3.min.js"></script>
+    <script>
+function renderChart() {
+
+var data = d3.csv.parse(d3.select('#csv').text());
+var valueLabelWidth = 40; // space reserved for value labels (right)
+var barHeight = 20; // height of one bar
+var barLabelWidth = 700; // space reserved for bar labels
+var barLabelPadding = 5; // padding between bar and bar labels (left)
+var gridLabelHeight = 18; // space reserved for gridline labels
+var gridChartOffset = 5; // space between start of grid and first bar
+var maxBarWidth = 320; // width of the bar with the max value
+ 
+// accessor functions 
+var barLabel = function(d) { return d['Method Name']; };
+var barValue = function(d) { return parseFloat(d['Time Taken(Sec)']); };
+ 
+// scales
+var yScale = d3.scale.ordinal().domain(d3.range(0, data.length)).rangeBands([0, data.length * barHeight]);
+var y = function(d, i) { return yScale(i); };
+var yText = function(d, i) { return y(d, i) + yScale.rangeBand() / 2; };
+var x = d3.scale.linear().domain([0, d3.max(data, barValue)]).range([0, maxBarWidth]);
+// svg container element
+var chart = d3.select('#chart').append("svg")
+  .attr('width', maxBarWidth + barLabelWidth + valueLabelWidth)
+  .attr('height', gridLabelHeight + gridChartOffset + data.length * barHeight);
+// grid line labels
+var gridContainer = chart.append('g')
+  .attr('transform', 'translate(' + barLabelWidth + ',' + gridLabelHeight + ')'); 
+gridContainer.selectAll("text").data(x.ticks(10)).enter().append("text")
+  .attr("x", x)
+  .attr("dy", -3)
+  .attr("text-anchor", "middle")
+  .text(String);
+// vertical grid lines
+gridContainer.selectAll("line").data(x.ticks(10)).enter().append("line")
+  .attr("x1", x)
+  .attr("x2", x)
+  .attr("y1", 0)
+  .attr("y2", yScale.rangeExtent()[1] + gridChartOffset)
+  .style("stroke", "#ccc");
+// bar labels
+var labelsContainer = chart.append('g')
+  .attr('transform', 'translate(' + (barLabelWidth - barLabelPadding) + ',' + (gridLabelHeight + gridChartOffset) + ')'); 
+labelsContainer.selectAll('text').data(data).enter().append('text')
+  .attr('y', yText)
+  .attr('stroke', 'none')
+  .attr('fill', 'black')
+  .attr("dy", ".35em") // vertical-align: middle
+  .attr('text-anchor', 'end')
+  .text(barLabel);
+// bars
+var barsContainer = chart.append('g')
+  .attr('transform', 'translate(' + barLabelWidth + ',' + (gridLabelHeight + gridChartOffset) + ')'); 
+barsContainer.selectAll("rect").data(data).enter().append("rect")
+  .attr('y', y)
+  .attr('height', yScale.rangeBand())
+  .attr('width', function(d) { return x(barValue(d)); })
+  .attr('stroke', 'white')
+  .attr('fill', 'steelblue');
+// bar value labels
+barsContainer.selectAll("text").data(data).enter().append("text")
+  .attr("x", function(d) { return x(barValue(d)); })
+  .attr("y", yText)
+  .attr("dx", 3) // padding-left
+  .attr("dy", ".35em") // vertical-align: middle
+  .attr("text-anchor", "start") // text-align: right
+  .attr("fill", "black")
+  .attr("stroke", "none")
+  .text(function(d) { return d3.round(barValue(d), 2); });
+// start line
+barsContainer.append("line")
+  .attr("y1", -gridChartOffset)
+  .attr("y2", yScale.rangeExtent()[1] + gridChartOffset)
+  .style("stroke", "#000");
+
+}
+    </script>
+    <script id="csv" type="text/csv">Method Name,Time Taken(Sec),Exception Case?
+"updateOnSiteOrders(com.fares.utility.ifc.model.corelogic.CoreLogicArchiveInData, java.lang.String)",396,    true
+"getPropertyDetail(com.fares.common.model.PassportUserInfo,  com.fares.smartsearch.ifc.model.SmartSearchInData)",92,    false
+"baseLineSearch(com.fares.common.model.UserInfo, com.fares.vectorrules.ifc.model.cascade.baseline.BaseLineSearch)",79,    false
+"passportLoginWithEntitlement(com.fares.common.model.PassportUserInfo, java.lang.String)",61,    false
+"searchPropertyMultipleCounties(com.fares.common.model.UserInfo, com.fares.propertysearch.ifc.model.IPropertySearchData)",61,    true
+retrieveReportIds180DaysOld()    ,24,    false
+"searchProperty(com.fares.common.model.PassportUserInfo, com.fares.smartsearch.ifc.model.SmartSearchInData)    ",11,    false
+"getGroupDataForApp(java.lang.String, boolean)    ",5,    false
+"getMarketTrendCharts(com.fares.common.model.PassportUserInfo, com.fares.retrends.ifc.model.TrendsInData)    ",3,    false
+"searchPropertyCompleteDataMultipleCounties(com.fares.common.model.UserInfo, com.fares.propertysearch.ifc.model.IPropertySearchData)",3,    true
+getTransactionDates(java.util.List)    ,3,    false
+"cascadeAvmCalculate(com.fares.common.model.UserInfo, com.fares.vectorrules.ifc.model.cascade.ICascadeAvmInData)    ",2,    true
+"passportLoginWithEntitlement(com.fares.common.model.PassportUserInfo, java.lang.String)",1,    true
+"getPreferences(com.fares.common.model.PassportUserInfo, com.fares.preference.ifc.model.PreferenceInData)   ",1,    false
+passportUserLogout(com.fares.common.model.PassportUserInfo)    ,1,    false
+lookupDataElementValues(int)    ,1,    false
+"getTemplatesByTemplateCode(com.fares.common.model.PassportUserInfo,  com.fares.preference.ifc.model.PreferenceInData)   ",1,    false
+getReportSettingsForFocusUser(com.fares.reports.ifc.model.UserReportSettingsRequest)    ,1,    true
+"accumulatePassportProductCode(com.fares.common.model.PassportUserInfo, java.lang.String)",1,    false</script>
+    <script>renderChart();</script>
+  </body>
+</html>

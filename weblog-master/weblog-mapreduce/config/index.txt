@@ -1,0 +1,63 @@
+1	timestamp	Apr 28, 2013 12:03:43 AM PDT> 
+2	severity	<Debug> 
+3	subsystem	<EjbInvoke> 
+4	machine_name	<anaeur70> 
+5	server_name	<WL10MP2-ServiceSTServer1> 
+6	threadId	<[ACTIVE] ExecuteThread: '60' for queue: 'weblogic.kernel.Default (self-tuning)'>
+7	userid <weblogic> 
+8	transactionid	<> 
+9	diagnosticid	<> 
+10	rawtime_value	<1367132623411> 
+11	messageid <BEA-000000> 
+12	message_text <[StatelessRemoteObject] [StatelessEJBObject] preInvoke with md: MethodDescriptor: Method: searchProperty(com.fares.common.model.PassportUserInfo, com.fares.smartsearch.ifc.model.SmartSearchInData) Transaction attribute: TX_SUPPORTS Isolation Level: No Isolation Level Set Tx Timeout: 30000 on: [BaseRemoteObject] home: com.fares.smartsearch.ejb.SmartSearch_3wwr4_HomeImpl@1f1ad6c0> 
+
+
+####<Apr 28, 2013 12:02:47 AM PDT> <Debug> <EjbInvoke> <anaeur70> <WL10MP2-ServiceSTServer1> <[ACTIVE] ExecuteThread: '44' for queue: 'weblogic.kernel.Default (self-tuning)'> <weblogic> <> <> <1367132567485> <BEA-000000> <[BaseRemoteObject] prePostInvoke called with txRetryCount = 0
+ wrap:[InvocationWrapper] callerTx: null invokeTx: null bean:com.fares.smartsearch.ejb.SmartSearch_3wwr4_Impl@196d0d0c primaryKey: nullMethodDescriptor: MethodDescriptor: Method: getPropertyListingIndicatorInfo(com.fares.common.model.PassportUserInfo, com.fares.smartsearch.ifc.model.ListingInData) Transaction attribute: TX_SUPPORTS Isolation Level: No Isolation Level Set Tx Timeout: 30000 Exception: null on: [BaseRemoteObject] home: com.fares.smartsearch.ejb.SmartSearch_3wwr4_HomeImpl@1ecb96d5> 
+
+
+<Apr 28, 2013 12:02:47 AM PDT>
+<Debug>
+<EjbInvoke>
+<anaeur70>
+<WL10MP2-ServiceSTServer1>
+<[ACTIVE] ExecuteThread: '44' for queue: 'weblogic.kernel.Default (self-tuning)'>
+<weblogic> 
+<>
+<> 
+<1367132567485> 
+<BEA-000000>
+<[BaseRemoteObject] prePostInvoke called with txRetryCount = 0
+ wrap:[InvocationWrapper] callerTx: null invokeTx: null bean:com.fares.smartsearch.ejb.SmartSearch_3wwr4_Impl@196d0d0c primaryKey: nullMethodDescriptor: MethodDescriptor: Method: getPropertyListingIndicatorInfo(com.fares.common.model.PassportUserInfo, com.fares.smartsearch.ifc.model.ListingInData) Transaction attribute: TX_SUPPORTS Isolation Level: No Isolation Level Set Tx Timeout: 30000 Exception: null on: [BaseRemoteObject] home: com.fares.smartsearch.ejb.SmartSearch_3wwr4_HomeImpl@1ecb96d5> 
+
+
+####<Apr 28, 2013 12:10:00 AM PDT> <Debug> <EjbInvoke> <anaeur70> <WL10MP2-ServiceSTServer1> <[ACTIVE] ExecuteThread: '76' for queue: 'weblogic.kernel.Default (self-tuning)'> <<anonymous>> <> <> <1367133000029> <BEA-000000> <[BaseRemoteObject] preInvoke called with:[InvocationWrapper] callerTx: null invokeTx: null bean:null primaryKey: nullMethodDescriptor: MethodDescriptor: Method: getPendingEmails(java.lang.String) Transaction attribute: TX_SUPPORTS Isolation Level: No Isolation Level Set Tx Timeout: 30000 on:[BaseRemoteObject] home: com.fares.administration.ejb.EmailServiceBean_cytgry_HomeImpl@15fc08da> 
+
+ ####<Apr 28, 2013 12:10:00 AM PDT>
+ <Debug> 
+ <EjbInvoke>
+ <anaeur70> 
+ <WL10MP2-ServiceSTServer1>
+ <[ACTIVE] ExecuteThread: '76' for queue: 'weblogic.kernel.Default (self-tuning)'> 
+ <<anonymous>>
+ <> 
+ <> 
+ <1367133000029>
+ <BEA-000000>
+ <[BaseRemoteObject] preInvoke called with:[InvocationWrapper] callerTx: null invokeTx: null bean:null primaryKey: nullMethodDescriptor: MethodDescriptor: Method: getPendingEmails(java.lang.String) Transaction attribute: TX_SUPPORTS Isolation Level: No Isolation Level Set Tx Timeout: 30000 on:[BaseRemoteObject] home: com.fares.administration.ejb.EmailServiceBean_cytgry_HomeImpl@15fc08da> 
+ 
+ 
+###<Apr 28, 2013 12:00:56 AM PDT> <Info> <Diagnostics> <anaeur70> <WL10MP2-ServiceSTServer1> <[ACTIVE] ExecuteThread: '10' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <> <1367132456773> <BEA-320143> <Scheduled 0 data retirement tasks as per configuration.> 
+
+
+<[StatelessRemoteObject] [StatelessEJBObject] preInvoke with md: MethodDescriptor: Method: getPropertyListingIndicatorInfo(com.fares.common.model.PassportUserInfo, com.fares.smartsearch.ifc.model.ListingInData) Transaction attribute: TX_SUPPORTS Isolation Level: No Isolation Level Set Tx Timeout: 30000 on: [BaseRemoteObject] home: com.fares.smartsearch.ejb.SmartSearch_3wwr4_HomeImpl@1ecb96d5> 
+<[BaseRemoteObject] preInvoke called with:[InvocationWrapper] callerTx: null invokeTx: null bean:null primaryKey: nullMethodDescriptor: MethodDescriptor: Method: getPropertyListingIndicatorInfo(com.fares.common.model.PassportUserInfo, com.fares.smartsearch.ifc.model.ListingInData) Transaction attribute: TX_SUPPORTS Isolation Level: No Isolation Level Set Tx Timeout: 30000 on:[BaseRemoteObject] home: com.fares.smartsearch.ejb.SmartSearch_3wwr4_HomeImpl@1ecb96d5> 
+<[StatelessManager] In preInvoke with timeout:30000 on manager: [StatelessManager] home/class: com.fares.smartsearch.ejb.SmartSearch_3wwr4_HomeImpl@1ecb96d5pool: weblogic.ejb.container.pool.StatelessSessionPool@1e3ca9cd - ejb name: 'SmartSearch' debug: true> 
+<[Pool] SmartSearch - Returning bean from the pool: 'com.fares.smartsearch.ejb.SmartSearch_3wwr4_Impl@196d0d0c'> 
+<[BaseRemoteObject] Manager.preInvoke returned a bean:com.fares.smartsearch.ejb.SmartSearch_3wwr4_Impl@196d0d0c> 
+<[BaseRemoteObject] prePostInvoke called with txRetryCount = 0
+ wrap:[InvocationWrapper] callerTx: null invokeTx: null bean:com.fares.smartsearch.ejb.SmartSearch_3wwr4_Impl@196d0d0c primaryKey: nullMethodDescriptor: MethodDescriptor: Method: getPropertyListingIndicatorInfo(com.fares.common.model.PassportUserInfo, com.fares.smartsearch.ifc.model.ListingInData) Transaction attribute: TX_SUPPORTS Isolation Level: No Isolation Level Set Tx Timeout: 30000 Exception: null on: [BaseRemoteObject] home: com.fares.smartsearch.ejb.SmartSearch_3wwr4_HomeImpl@1ecb96d5> 
+<[StatelessManager] In postInvoke on [StatelessManager] home/class: com.fares.smartsearch.ejb.SmartSearch_3wwr4_HomeImpl@1ecb96d5pool: weblogic.ejb.container.pool.StatelessSessionPool@1e3ca9cd - ejb name: 'SmartSearch' debug: true> 
+<[BaseRemoteObject] postInvokeTxRetry returning with retry = false> 
+
+ 

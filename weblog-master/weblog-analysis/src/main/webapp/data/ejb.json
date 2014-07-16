@@ -1,0 +1,47 @@
+{
+ "name": "flare",
+ "children": [
+  {
+   "name": "analytics",
+   "children": [
+    {
+     "name": "interpolate",
+     "children": [
+      {"name": "com.fares.lookup.ejb.LookupServiceEJB_htzec7_HomeImpl", "size": 85},
+      {"name": "com.fares.administration.ejb.EmailServiceBean_cytgry_HomeImpl", "size": 572},
+      {"name": "com.fares.preference.ejb.PreferenceService_wcbi7k_HomeImpl", "size": 223},
+      {"name": "com.fares.smartsearch.ejb.SmartSearch_3wwr4_HomeImpl", "size": 48}
+       ]
+    },
+{
+     "name": "graph",
+     "children": [
+      {"name": "com.fares.useraccess.ejb.UserAccessService_wrjm2t_HomeImpl", "size": 37}
+      ]
+    },
+{
+     "name": "converters",
+     "children": [
+{"name": "com.fares.vectorrules.ejb.VectorRulesCascadeService_6qcswr_HomeImpl", "size": 12} 
+        ]
+    },
+{
+     "name": "rojas",
+     "children": [
+        {"name": "com.fares.useraccess.ejb.ClassicUserAccessService_kwa3z1_HomeImpl", "size": 7}
+     ]
+    },
+{
+     "name": "roja1",
+     "children": [
+      {"name": "com.fares.utility.ejb.UtilityService_e2716b_HomeImpl", "size": 2},
+      {"name": "com.fares.retrends.ejb.RetrendsService_1af6bp_HomeImpl", "size": 1},
+      {"name": "com.fares.vectorrules.ejb.VectorRulesUtilService_d6pqih_HomeImpl", "size": 1}
+     ]
+    }
+
+]
+}
+]
+}
+ 

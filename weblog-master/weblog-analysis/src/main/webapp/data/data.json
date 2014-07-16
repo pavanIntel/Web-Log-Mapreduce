@@ -1,0 +1,67 @@
+{
+ "name": "flare",
+ "children": [
+  {
+   "name": "analytics",
+   "children": [
+    {
+     "name": "cluster",
+     "children": [
+    {"name": "checkAccess", "size": 4},
+      {"name": "getAdditionalUserInfo", "size": 3},
+      {"name": "getContractList", "size": 8},
+       {"name": "getCountyByZipCodes", "size": 5},
+       {"name": "getCoverageForCoreMls", "size": 9},
+        {"name": "getFaclCustomer", "size": 8}, 
+        {"name": "getGroupDetails", "size": 4},
+         {"name": "getPermissableMlsBoards", "size": 6},
+       {"name": "getProductAccessCategory", "size": 4},
+         {"name": "getPropertyDetail", "size": 14},
+          {"name": "getPropertyListingIndicatorInfo", "size": 3},
+           {"name": "getTSRCompany", "size": 4},
+          {"name": "getUserProfileByUserId", "size": 4},
+           {"name": "trackUsage", "size": 3}
+          
+     ]
+    },
+    {
+     "name": "graph",
+     "children": [
+{"name": "getAppComponentPreferenceGroupMapping", "size": 1},
+       {"name": "etAppComponentTemplateMapping", "size": 1},
+      {"name": "getMLSlookups(int)", "size": 1},
+       {"name": "getMarketTrendCharts", "size": 1},
+ {"name": "passportLoginWithEntitlement", "size": 1},
+ {"name": "getTransactionDates", "size": 1},
+ {"name": "productVerification", "size": 1},
+ {"name": "updateOnSiteOrders", "size": 1}
+     ]
+    },
+    {
+     "name": "optimization",
+     "children": [
+       {"name": "userLogin", "size": 2},
+       {"name": "passportUserLogout", "size": 2},
+           {"name": "sendEmail", "size": 2}
+     ]
+    }
+   ]
+  },
+  {
+   "name": "animate",
+   "children": [
+     {"name": "baseLineSearch", "size": 12},
+    {
+     "name": "interpolate",
+     "children": [
+       {"name": "getPendingEmails", "size": 572},
+      {"name": "getPreferences", "size": 128},
+      {"name": "getTemplatesByTemplateCode", "size": 89},
+       {"name": "lookupDataElementValues", "size": 79},
+        {"name": "searchProperty", "size": 15}
+     ]
+    }
+   ]
+  }
+]
+}
